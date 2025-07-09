@@ -26,6 +26,7 @@
     <inventoryobject Blueprint="Eric_SnapjawMage_Fire Tome" Number="1" />
     
     <mutation Name="Pyrokinesis" Level="1" />
+    <tag Name="DynamicObjectsTable:Snapjaws" />
   </object>
 
   <object Name="Eric_SnapjawMage_Ice Mage" Inherits="Eric_SnapjawMage_Snapjaw Mage">
@@ -34,5 +35,6 @@
     <inventoryobject Blueprint="Eric_SnapjawMage_Ice Tome" Number="1" />
 
     <mutation Name="Cryokinesis" Level="1" />
+    <tag Name="DynamicObjectsTable:Snapjaws" />
   </object>
 </objects>
