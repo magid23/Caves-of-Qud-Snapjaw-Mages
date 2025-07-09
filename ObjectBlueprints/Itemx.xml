@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects>
+  <object Name="Eric_SnapjawMage_Magic Tome" Inherits="BaseMissileWeapon">
+    <tag Name="BaseObject" Value="*noinherit" />
+
+    <part Name="Description" Short="Crisp pages of goatskin vellum are bound into a codex." />
+    <part Name="Physics" Weight="1" UsesTwoSlots="true" />
+    <part Name="Commerce" Value="80" />
+
+    <tag Name="Tier" Value="2" />
+    <tag Name="Mods" Value="" />
+  </object>
+
+  <object Name="Eric_SnapjawMage_Fire Tome" Inherits="Eric_SnapjawMage_Magic Tome">
+    <part Name="Render" DisplayName="tome of {{R|fire}}" Tile="Items/sw_book_1.bmp" ColorString="&amp;R" DetailColor="Y" />
+    <part Name="MissileWeapon" AmmoChar="f" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="0" />
+    <part Name="CooldownAmmoLoader" Cooldown="10" Readout="true" ProjectileObject="Eric_SnapjawMage_FireTomeProjectile" />
+
+    <tag Name="MissileFireSound" Value="flamethrower" />
+  </object>
+
+  <object Name="Eric_SnapjawMage_Ice Tome" Inherits="Eric_SnapjawMage_Magic Tome">
+    <part Name="Render" DisplayName="tome of {{C|ice}}" Tile="Items/sw_book_1.bmp" ColorString="&amp;C" DetailColor="Y" />
+    <part Name="MissileWeapon" AmmoChar="FR" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="0" />
+    <part Name="CooldownAmmoLoader" Cooldown="10" Readout="true" ProjectileObject="Eric_SnapjawMage_IceTomeProjectile" />
+
+    <tag Name="MissileFireSound" Value="hiss_low" />
+  </object>
+
+  <!-- Copied from ProjectileFlamethrower -->
+  <object Name="Eric_SnapjawMage_FireTomeProjectile" Inherits="TemporaryProjectile">
+    <part Name="Render" DisplayName="{{R|stream of flame}}" ColorString="&amp;R" />
+    <part Name="Projectile" BasePenetration="4" BaseDamage="1d4" Attributes="Heat Fire" ColorString="&amp;R" PassByVerb="whoosh" />
+    <part Name="TemperatureOnHit" Amount="4d20" Max="false" OnWielderHit="true" />
+    <part Name="TemperatureOnEntering" Amount="8d20" Max="false" OnWielderHit="true" />
+  </object>
+
+  <!-- Copied from ProjectileFreezeRay -->
+  <object Name="Eric_SnapjawMage_IceTomeProjectile" Inherits="TemporaryProjectile">
+    <part Name="Render" DisplayName="{{C|energy beam}}" ColorString="&amp;B" />
+    <part Name="Projectile" BasePenetration="4" BaseDamage="1d4" Attributes="Cold" ColorString="&amp;B" PassByVerb="crackle" />
+    <part Name="TemperatureOnHit" Amount="-4d20" Max="false" OnWielderHit="true" />
+    <part Name="TemperatureOnEntering" Amount="-8d20" Max="false" OnWielderHit="true" />
+  </object>
+</objects>
